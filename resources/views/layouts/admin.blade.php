@@ -92,8 +92,8 @@
             $segment = Request::segment(2);
           ?>     
           <li class="nav-item">
-            <a href="{{ route('home') }}" class="nav-link 
-              @if(!$segment)
+            <a href="{{ url('admin') }}" class="nav-link 
+              @if(!$segment=='admin')
               active
               @endif
               ">
@@ -104,29 +104,41 @@
             </a>
             
           </li>
-          <!-- 
+          
           <li class="nav-item">
-              @if($segment=='categories')
+            <a href="{{ route('users') }}" class="nav-link 
+              @if($segment=='users')
               active
               @endif">
-              <i class="nav-icon fa fa-th"></i>
+              <i class="nav-icon fa fa-user"></i>
               <p>
-                Category
+                User List
               </p>
             </a>
           </li>
           <li class="nav-item">
-            
-              @if($segment=='news')
+            <a href="{{ route('products') }}" class="nav-link 
+              @if($segment=='products')
               active
               @endif">
-              <i class="nav-icon fa fa-pie-chart"></i>
+              <i class="nav-icon fa fa-book open"></i>
               <p>
-                News
+                Product List
               </p>
             </a>
           </li>
-          -->
+          <li class="nav-item">
+            <a href="{{ route('products') }}" class="nav-link 
+              @if($segment=='products')
+              active
+              @endif">
+              <i class="nav-icon fa fa-credit-card"></i>
+              <p>
+                Order List
+              </p>
+            </a>
+          </li>
+          
           <li class="nav-header">Action</li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"

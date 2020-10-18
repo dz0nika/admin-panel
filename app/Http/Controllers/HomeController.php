@@ -24,7 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $arr['users'] = User::all(); 
-        return view('home')->with($arr);
+        return view('home');
     }
 }

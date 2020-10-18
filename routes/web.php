@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('name');
+Route::get('/admin/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
+Route::get('/admin/users', [App\Http\Controllers\UserController::class, 'index'])->name('users');
