@@ -3,21 +3,13 @@
 @section('content')
 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">List of Users</h3>
-                    <div class="card-tools">
-                      <ul class="pagination pagination-sm">
-                    <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
-                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
-                  </ul>
-                    </div>
+                    <h1 class="card-title">List of Users</h1>               
+                        <a href="{{ route('admin.users.create') }}" class="btn btn-primary float-right">Add New User Manually</a>
                     <!-- /.card-tools -->
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body table-responsive p-0">
-                    <table class="table table-hover">
+                    <table class="table table-borded table-striped p-2">
                       <thead>
                         <tr>
                           <th>ID</th>
@@ -35,11 +27,25 @@
                             <th>{{$user['email']}}</th>
                             <th>{{$user['created_at']}}</th>
                             <th>{{$user['updated_at']}}</th>
-                            <th href="#" class="btn btn-dark">CRUD</th>
+                            <th href="{{ route('admin.users.edit',$user->id) }}" class="btn btn-info">Edit</th>
+                            <th href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" class="btn btn-danger">Delete</th>
+                              <form action="{{ route('admin.users.destroy',$user->id) }}" method="post">
+                                @method('DELETE')
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                              </form>
                           </tr>
                         @endforeach
                       </tbody>
                     </table>
+                    <div class="card-tools">
+                        <ul class="pagination pagination-sm">
+                          <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
+                          <li class="page-item"><a href="#" class="page-link">1</a></li>
+                          <li class="page-item"><a href="#" class="page-link">2</a></li>
+                          <li class="page-item"><a href="#" class="page-link">3</a></li>
+                          <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+                      </ul>
+                    </div>
                   </div>
                   <!-- /.card-body -->
                 </div>

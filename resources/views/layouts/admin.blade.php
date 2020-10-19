@@ -106,7 +106,7 @@
           </li>
           
           <li class="nav-item">
-            <a href="{{ route('users') }}" class="nav-link 
+            <a href="{{ url('admin') }}" class="nav-link 
               @if($segment=='users')
               active
               @endif">
@@ -117,7 +117,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('products') }}" class="nav-link 
+            <a href="#" class="nav-link 
               @if($segment=='products')
               active
               @endif">
@@ -128,11 +128,11 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('products') }}" class="nav-link 
+           <a href="#" class="nav-link 
               @if($segment=='products')
               active
               @endif">
-              <i class="nav-icon fa fa-credit-card"></i>
+              <i class="nav-icon fa fa-book open"></i>
               <p>
                 Order List
               </p>
