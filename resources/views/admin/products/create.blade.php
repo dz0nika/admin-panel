@@ -6,14 +6,14 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Add New User</h1>
+              <h1 class="m-0 text-dark">Add New Product</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item">
                 	<a href=" {{ route('home') }}">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Add Users</li>
+                <li class="breadcrumb-item active">Add Products</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -22,7 +22,7 @@
           <!-- /.content-header -->
       <section class="content">
         <div class="container-fluid">
-          <form method="post" action="{{ route('users.store') }}">
+          <form method="post" action="{{ route('products.store') }}">
             @csrf
             <div class="form-group">
               <div class="row">
@@ -32,27 +32,9 @@
                 <div class="clearfix"></div>
               </div>
               <div class="row">
-                <label class="col-md-3">Email</label>
+                <label class="col-md-3">Quantity</label>
                 <div class="col-md-6">
-                	<input type="string" name="email" class="form-control"></div>
-                <div class="clearfix"></div>
-              </div>
-              <div class="row">
-                <label class="col-md-3">Password</label>
-                <div class="col-md-6">
-                  <input type="password" name="password" class="form-control" id=myInput>
-                  <input type="checkbox" onclick="myFunction()">Show Password
-                  </div>
-                  <script>
-                      function myFunction() {
-                        var x = document.getElementById("myInput");
-                        if (x.type === "password") {
-                          x.type = "text";
-                        } else {
-                          x.type = "password";
-                        }
-                      }
-                  </script>
+                	<input type="string" name="quantity" class="form-control"></div>
                 <div class="clearfix"></div>
               </div>
             </div>

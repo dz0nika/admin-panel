@@ -3,8 +3,8 @@
 @section('content')
                 <div class="card">
                   <div class="card-header">
-                    <h1 class="card-title">List of Users</h1>               
-                        <a href="{{ route('users.create') }}" class="btn btn-primary float-right">Add New User Manually</a>
+                    <h1 class="card-title">List of Products</h1>               
+                        <a href="{{ route('products.create') }}" class="btn btn-primary float-right">Add New Product Manually</a>
                     <!-- /.card-tools -->
                   </div>
                   <!-- /.card-header -->
@@ -13,23 +13,23 @@
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>User Name</th>
-                          <th>User Email</th>
+                          <th>Product Name</th>
+                          <th>Product Quantity</th>
                           <th>Created At</th>
                           <th>Updated At</th>
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach($users as $user)
+                        @foreach($products as $product)
                           <tr>
-                            <th>{{$user['id']}}</th>
-                            <th>{{$user['name']}}</th>
-                            <th>{{$user['email']}}</th>
-                            <th>{{$user['created_at']}}</th>
-                            <th>{{$user['updated_at']}}</th>
+                            <th>{{$product['id']}}</th>
+                            <th>{{$product['name']}}</th>
+                            <th>{{$product['quantity']}}</th>
+                            <th>{{$product['created_at']}}</th>
+                            <th>{{$product['updated_at']}}</th>
 
                             <th>
-                              <a href="{{url('/admin/users/' . $user['id'] . '/') }}" class="btn btn-info">Details</a>
+                              <a href="{{url('/admin/products/' . $product['id'] . '/') }}" class="btn btn-info">Details</a>
                             </th>
 
                           </tr>
@@ -38,9 +38,10 @@
                     </table>
                     <div class="card-tools">
                       <div class="pagination justify-content-center p-2">
-                          {!! $users->links() !!}
+                          {!! $products->links() !!}
                       </div>
                     </div>
+                  </div>
                   <!-- /.card-body -->
                 </div>
                 <!-- /.card -->

@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $arr['users'] = User::all(); 
+        $arr['users'] = User::simplePaginate(10); 
         return view('admin.users.index', $arr);
     }
 
@@ -85,13 +85,13 @@ class UserController extends Controller
      * @param  \App\Models\Product $Product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $User, $id)
+    public function update(Request $request, $id)
     {
         $users = User::findOrFail($id);
         $users->name = $request->name;
         $users->email = $request->email;
         $users->save();
-        return redirect()->route('users.index');
+        return redirect()->route('/users/' . $users->id);
     }
 
     /**
@@ -100,9 +100,9 @@ class UserController extends Controller
      * @param  \App\Models\Product $Product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $User)
-    {
+    public function destroy($id)
+    {   
         User::destroy($id);
-        return redirect()->route('admin.users.index');
+        return redirect()->route('users.index');
     }
 }

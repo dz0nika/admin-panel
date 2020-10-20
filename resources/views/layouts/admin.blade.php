@@ -38,10 +38,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ url('/') }}" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="{{ url('admin') }}" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -65,7 +62,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ url('/') }}" class="brand-link">
+    <a href="{{ url('admin') }}" class="brand-link">
       <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
@@ -106,7 +103,7 @@
           </li>
           
           <li class="nav-item">
-            <a href="{{ url('admin') }}" class="nav-link 
+            <a href="{{ url('admin/users') }}" class="nav-link 
               @if($segment=='users')
               active
               @endif">
@@ -117,7 +114,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link 
+            <a href="{{ url('admin/products') }}" class="nav-link 
               @if($segment=='products')
               active
               @endif">
@@ -129,7 +126,7 @@
           </li>
           <li class="nav-item">
            <a href="#" class="nav-link 
-              @if($segment=='products')
+              @if($segment=='orders')
               active
               @endif">
               <i class="nav-icon fa fa-book open"></i>
@@ -148,14 +145,10 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-
-
-           
+               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+               @csrf
+               </form>
           </li>
-          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

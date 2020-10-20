@@ -85,16 +85,7 @@
           <!-- Left col -->
           <section class="col-lg-7 connectedSortable">
             <!-- Custom tabs (Charts with tabs)-->
-                
-
-            
-            <!-- /.card -->
-          </section>
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-5 connectedSortable">
-
-            <!-- Map card -->
+                 <!-- Map card -->
             <div class="card bg-primary-gradient">
               <div class="card-header no-border">
                 <h3 class="card-title">
@@ -145,7 +136,10 @@
               </div>
             </div>
             <!-- /.card -->
-
+          </section>
+          <!-- /.Left col -->
+          <!-- right col (We are only adding the ID to make the widgets sortable)-->
+          <section class="col-lg-5 connectedSortable">
             <!-- solid sales graph -->
             <div class="card bg-info-gradient">
               <div class="card-header no-border">
